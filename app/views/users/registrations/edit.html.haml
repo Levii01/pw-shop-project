@@ -28,7 +28,9 @@
               = f.input :last_name
             .mb-4
               = f.input :education, as: :select, collection: User::EDUCATION.map { |k, _i| [k.capitalize, k]}
-              = f.input :interests
+              .mt-1
+                = f.input :interests, label: "", as: :check_boxes, collection: User::INTERESTS.map {|k| [k, k]}, input_html: { multiple: true }
+
           .col-md-6
             = f.input :country, as: :string, placeholder: "Polska"
             = f.input :zip_code, placeholder: "43-300"
