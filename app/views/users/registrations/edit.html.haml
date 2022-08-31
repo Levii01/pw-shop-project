@@ -1,0 +1,45 @@
+.card.mt-4
+  .card-body
+    .card-title
+      %h5 Edit #{resource_name.to_s.humanize}
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "users/shared/error_messages", resource: resource
+
+      .row.mb-5
+        .col-md-6
+          .mb-4
+            = f.input :email, placeholder: "user@domain.com", autofocus: true, autocomplete: "email"
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              %div
+                Currently waiting confirmation for: #{resource.unconfirmed_email}
+            = f.input :login, hint: "It should be unique"
+        .col-md-6
+          .mb-4
+            = f.input :password, hint: "(leave blank if you don't want to change it) #{@minimum_password_length && " - #{@minimum_password_length} characters minimum"}"
+          
+            = f.input :password_confirmation
+            = f.input :current_password, hint: "(we need your current password to confirm your changes)"
+
+      .mb-3
+        .row
+          .col-md-6
+            .mb-4
+              = f.input :first_name
+              = f.input :last_name
+            .mb-4
+              = f.input :education, as: :select, collection: User::EDUCATION.map { |k, _i| [k.capitalize, k]}
+              .mt-1
+                = f.input :interests, as: :check_boxes, collection: User::INTERESTS.map {|k| [k, k]}, input_html: { multiple: true }
+
+          .col-md-6
+            = f.input :country, as: :string, placeholder: "Polska"
+            = f.input :zip_code, placeholder: "43-300"
+            = f.input :city, placeholder: "Gdańsk"
+            = f.input :street, placeholder: "Mariacka"
+            = f.input :aparment_no, placeholder: "27/3"
+      .actions
+        = f.submit "Update", class: "btn btn-primary"
+    %h3.mt-5 Cancel my account
+    %p
+      Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-light"}
+    = link_to "Back", :back
