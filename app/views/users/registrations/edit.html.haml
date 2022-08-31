@@ -28,14 +28,14 @@
               = f.input :first_name
               = f.input :last_name
             .mb-4
-              = f.input :education
+              = f.input :education, as: :select, collection: User::EDUCATION.to_a
               = f.input :interests
           .col-md-6
-            = f.input :country, as: :string
-            = f.input :zip_code
-            = f.input :city
-            = f.input :street
-            = f.input :aparment_no
+            = f.input :country, as: :string, placeholder: "Polska"
+            = f.input :zip_code, placeholder: "43-300"
+            = f.input :city, placeholder: "Gdańsk"
+            = f.input :street, placeholder: "Mariacka"
+            = f.input :aparment_no, placeholder: "27/3"
 
 
           -# = f.input :first_name, label: 'Your username please', error: 'Username is mandatory, please specify one'
