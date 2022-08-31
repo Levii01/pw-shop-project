@@ -15,11 +15,10 @@
             = f.input :login, hint: "It should be unique"
         .col-md-6
           .mb-4
-            = f.input :password, autocomplete: "new-password",
-                                 hint: "(leave blank if you don't want to change it) #{@minimum_password_length && " - #{@minimum_password_length} characters minimum"}"
+            = f.input :password, hint: "(leave blank if you don't want to change it) #{@minimum_password_length && " - #{@minimum_password_length} characters minimum"}"
           
-            = f.input :password_confirmation, autocomplete: "new-password"
-            = f.input :current_password, autocomplete: "current-password", hint: "(we need your current password to confirm your changes)"
+            = f.input :password_confirmation
+            = f.input :current_password, hint: "(we need your current password to confirm your changes)"
 
       .mb-3
         .row
@@ -28,7 +27,7 @@
               = f.input :first_name
               = f.input :last_name
             .mb-4
-              = f.input :education, as: :select, collection: User::EDUCATION.to_a
+              = f.input :education, as: :select, collection: User::EDUCATION.map { |k, _i| [k.capitalize, k]}
               = f.input :interests
           .col-md-6
             = f.input :country, as: :string, placeholder: "Polska"
