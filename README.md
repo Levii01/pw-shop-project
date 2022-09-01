@@ -1,25 +1,41 @@
-# README
+# Techniki Transmisji sygnałów
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+W trakcie realizacji przedmiotu należy wykonać dwa małe projekty cząstkowe oraz projekt końcowy, będący podstawą zaliczenia przedmiotu. Projekty cząstkowe stanowią przygotowanie do wykonania projektu końcowego i ich przesłanie jest obowiązkowe, jednak ocena ich jest opisowa i nie jest częścią oceny końcowej za przedmiot.
 
-Things you may want to cover:
+# Pierwszy projekt cząstkowy
 
-* Ruby version
+Mechanizm rejestracji użytkownika w aplikacji internetowej 
+Mechanizm powinien umożliwiać zebranie od użytkownika wymaganych danych i przechowywanie ich po zakończeniu interakcji z nim. 
+Wytyczne: 
+- [x] poprawny formularz w HTML; 
+- [x] minimalny zestaw danych do zebrania:
+    - [x] imię,
+    - [x] nazwisko,
+    - [x] unikalny login,
+    - [x] hasło,
+    - [x] e-mail,
+    - [x] dokładny adres,
+    - [x] wykształcenie (do wyboru spośród: podstawowe, średnie, wyższe),
+    - [x] zainteresowania (min. 5 opcji z możliwością wybrania wielu z nich); 
+- [x] kontrola poprawności wypełnienia pól; 
+- [x] zapis poprawnych danych do tabeli w bazie; 
+- [x] wyświetlenie zapisanych danych po rejestracji. 
 
-* System dependencies
+# Drugi projekt cząstkowy
 
-* Configuration
+Prosta symulacja elementów sklepu internetowego Należy napisać prostą symulację sklepu internetowego.
+- [ ] Sklep powinien posiadać prostą listę produktów, które można „wkładać/usuwać” do/z wirtualnego koszyka.
+- [ ] Klient musi mieć możliwość obejrzenia zawartości koszyka oraz sumarycznej i cząstkowej ceny znajdujących się w nim artykułów.
+- [ ] Składanie zamówienia polega na wypełnieniu formularza HTML i przesłania jego zawartości e-mailem do sklepu. 
+W projekcie należy wykorzystać: 
+- [ ] obsługę sesji; 
+- [ ] obsługę bazy danych — pobieranie informacji o nazwie, opisie, cenie produktów. Opis projektu może z początku budzić obawy o jego skomplikowanie. Proszę się jednak nie martwić. Da się go wykonać na podstawie podręcznika. 
 
-* Database creation
+# Projekt końcowy
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# pw-shop-project
+Ocena końcowa z przedmiotu jest oceną za projekt końcowy (zaliczeniowy). Na zaliczenie należy wykonać projekt serwisu internetowego. Tematyka jest dowolna (np.: internetowy katalog części, internetowa księgarnia, rejestracja pacjentów w przychodni, itp.). Wymagania dotyczące serwisu: 
+- [ ] serwis musi być dostępny poprzez przeglądarkę internetową; 
+- [ ] końcową warstwę prezentacji muszą stanowić poprawne składniowo i semantycznie dokumenty HTML; 
+- [ ] baza danych musi składać się z co najmniej trzech tabel, pomiędzy którymi istnieją relacje; 
+- [ ] serwis musi umożliwiać wprowadzanie danych do bazy, modyfikację i usuwanie danych poprzez przeglądarkę internetową (interfejs HTML); 
+- [ ] musi istnieć część administracyjna serwisu (np. przeznaczona do uzupełniania danych w bazie) zabezpieczona przed nieautoryzowanym dostępem. 
