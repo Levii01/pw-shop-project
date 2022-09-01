@@ -25,4 +25,6 @@ class User < ApplicationRecord
   validates :aparment_no, presence: true, on: :update
   validates :education, presence: true, on: :update
   validates :interests, presence: true, on: :update
+
+  has_many :carts
 end
