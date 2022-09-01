@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
   validates :login, presence: true, on: :update
-  validates :login, uniqueness: { case_sensitive: false }
+  validates :login, uniqueness: { case_sensitive: false }, on: :update
   validates :country, presence: true, on: :update
   validates :zip_code, presence: true, on: :update
   validates :city, presence: true, on: :update
