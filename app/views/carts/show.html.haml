@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Balance:
+  = @cart.balance
+%p
+  %b Completed at:
+  = @cart.completed_at
+
+= link_to 'Edit', edit_cart_path(@cart)
+\|
+= link_to 'Back', carts_path
