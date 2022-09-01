@@ -1,3 +1,4 @@
+// inside app/frontend/packs/application.scss  
   
 // Just a quick ugly style to see if our CSS works  
 h1 {  
@@ -5,4 +6,5 @@ h1 {
 }  
   
 // Import Bootstrap v5  
+// FIXME! bootsrap loaded in app/views/layouts/application.html.haml
 // @import "~bootstrap/scss/bootstrap";  
