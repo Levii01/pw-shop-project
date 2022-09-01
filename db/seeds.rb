@@ -12,7 +12,7 @@
     model: FFaker::Product.model,
     brand: FFaker::Product.brand,
     photo_url: FFaker::Image.url("400x300"),
-    description: FFaker::LoremPL.paragraphs(2).join("\n"),
+    description: FFaker::LoremPL.paragraphs(1).join("\n"),
     price: (rand(10_000).to_f / 100 + 10),
     active: true,
   )

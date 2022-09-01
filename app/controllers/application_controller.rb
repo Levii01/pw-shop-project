@@ -9,13 +9,17 @@ class ApplicationController < ActionController::Base
   before_action :cart
 
   def cart
-    @cart ||= Cart.find_by(id: session[:cart_id]) || create_card
+    @cart ||= Cart.not_completed.find_by(id: session[:cart_id]) || last_cart || create_card
   end
 
   protected
 
+  def last_cart
+    Cart.not_completed.find_by(user: current_user)
+  end
+
   def create_card
-    @cart = Cart.create
+    @cart = Cart.create(user: current_user)
     session[:cart_id] = @cart.id
     @cart
   end
