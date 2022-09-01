@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :products
   devise_for :users, controllers: { registrations: 'registrations' }
   root 'welcome#index'
   get 'welcome/index'
