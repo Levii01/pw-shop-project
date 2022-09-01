@@ -17,7 +17,7 @@
           .mb-4
             = f.input :password, hint: "(leave blank if you don't want to change it) #{@minimum_password_length && " - #{@minimum_password_length} characters minimum"}"
           
-            = f.input :password_confirmation
+            = f.input :password_confirmation, autocomplete: "new-password"
             = f.input :current_password, hint: "(we need your current password to confirm your changes)"
 
       .mb-3
