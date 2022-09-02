@@ -2,7 +2,7 @@
 
 class Cart < ApplicationRecord
   has_many :cart_products, dependent: :destroy
-  has_many :products, through: :cart_products # FIXME: relation through
+  # has_many :products, through: :cart_products # FIXME: relation through
   belongs_to :user, optional: true
 
   scope :not_completed, -> { where(completed_at: nil) }
