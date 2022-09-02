@@ -1,0 +1,31 @@
+.card.mt-4.p-3
+  .card-body
+    %h2 Listing products
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Name
+          %th Brand
+          %th Model
+          %th Description
+          %th Price
+          %th Active
+          %th
+
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product.name
+            %td= product.brand
+            %td= product.model
+            %td= product.description
+            %td= product.price
+            %td= product.active
+            %td
+              = link_to 'Show', admin_product_path(product)
+              = link_to 'Edit', edit_admin_product_path(product)
+              = link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }
+
+    %br
+
+    = link_to 'New Product', new_admin_product_path

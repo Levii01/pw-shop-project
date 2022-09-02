@@ -6,4 +6,5 @@ h1 {
 }  
   
 // Import Bootstrap v5  
-@import "~bootstrap/scss/bootstrap";  
+// FIXME! bootsrap loaded in app/views/layouts/application.html.haml
+// @import "~bootstrap/scss/bootstrap";  

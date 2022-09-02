@@ -1,0 +1,9 @@
+.card.mt-4.p-3
+  .card-body
+    %h2 Editing product
+
+    = render 'form'
+
+    = link_to 'Show', admin_product_path(@product)
+    \|
+    = link_to 'Back', admin_products_path

@@ -1,0 +1,33 @@
+.card.mt-4.p-3
+  .card-body
+    %h2 Products
+    %h5 We have #{@products.size} products on our shop
+
+    .row.m-3
+      - @products.each do |product|
+        .col-md-4.p-3
+          .card
+            %img.card-img-top{alt: "Photo with product", src: product.photo_url}/
+            .card-body
+              %h5.card-title= product.name
+              %p.card-text= product.description
+              %a.card-link{href: product_path(product)} Read more
+
+            %ul.list-group.list-group-flush
+              %li.list-group-item
+                .row
+                  .col-md-6= "Model: #{product.model}"
+                  .col-md-6= "Brand: #{product.brand}"
+                  .col-md-6= "Price: #{product.price} zł"
+
+              %li.list-group-item
+                = simple_form_for(:cart_product, url: carts_cart_products_path,html: { method: :post }) do |f|
+                  .input-group
+                    = f.hidden_field :product_id, value: product.id
+                    = f.input :amount, label: false, as: :integer, input_html: { value: 1 }
+                    = f.submit "Add to cart", class: "btn btn-success"
+              -# %li.list-group-item="Model: #{product.model}"
+              -# %li.list-group-item= "Brand: #{product.brand}"
+              -# %li.list-group-item= "Price: #{product.price} zł"
+            -# .card-body
+              -# %a.card-link{:href => "#"} Another link

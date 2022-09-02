@@ -1,0 +1,51 @@
+.card.mt-4.p-3
+  .card-body
+    %h2 Your cart
+
+    %p
+      %b Balance:
+      = @cart.balance
+    %p
+      %b All products:
+      = @cart.cart_products&.sum(:amount)
+    - if @cart.completed_at?
+      %p
+        %b Completed at:
+        = @cart.completed_at
+  .card-body
+    %h2 Products in cart
+
+    %table.table.table-striped
+      %thead
+        %tr
+          %th{:scope => "col"} #
+          %th{:scope => "col"} Name
+          %th{:scope => "col"} Amount
+          %th{:scope => "col"} Price
+          %th{:scope => "col"} Sum Price
+          %th{:scope => "col"}
+          
+      %tbody
+        - @cart.cart_products.each_with_index do |cart_product, i|
+          %tr
+            %td= i + 1
+            %td
+              %a.card-link{href: product_path(cart_product.product)}= cart_product.name
+            %td= cart_product.amount
+            %td= cart_product.product.price
+            %td= cart_product.sum_price
+            %td= link_to "Delete", carts_cart_product_path(cart_product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"
+  
+  .card-body
+    = simple_form_for(@cart, url: carts_path,html: { method: :post }) do |f|
+      = f.submit "Confirm order", class: "btn btn-success"
+
+
+
+
+
+
+
+    -# = link_to 'Edit', edit_cart_path(@cart)
+    -# \|
+    -# = link_to 'Back', carts_path
