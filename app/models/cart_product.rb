@@ -8,7 +8,7 @@ class CartProduct < ApplicationRecord
   validates :cart, presence: true
   validates :amount, numericality: { greater_than_or_equal_to: 1, only_integer: true}, presence: true
 
-  after_save :refresh_cart
+  after_commit :refresh_cart
 
   def name
     "#{product.brand}: #{product.name} #{product.model}"

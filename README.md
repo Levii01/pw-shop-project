@@ -1,3 +1,9 @@
+Link do projektu: https://desolate-castle-70319.herokuapp.com/
+
+Dane Administrator: (ma specjalne uprawnienia)
+email: admin@admin.pl
+hasło: Password1
+
 # Techniki Transmisji sygnałów
 
 W trakcie realizacji przedmiotu należy wykonać dwa małe projekty cząstkowe oraz projekt końcowy, będący podstawą zaliczenia przedmiotu. Projekty cząstkowe stanowią przygotowanie do wykonania projektu końcowego i ich przesłanie jest obowiązkowe, jednak ocena ich jest opisowa i nie jest częścią oceny końcowej za przedmiot.
