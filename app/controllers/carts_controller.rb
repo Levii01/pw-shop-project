@@ -15,19 +15,16 @@ class CartsController < ApplicationController
   def edit
   end
 
-  # def create
-  #   @cart = Cart.new(cart_params)
-
-  #   respond_to do |format|
-  #     if @cart.save
-  #       format.html { redirect_to cart_url(@cart), notice: "Cart was successfully created." }
-  #       format.json { render :show, status: :created, location: @cart }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @cart.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def create
+    cart.completed_at = Time.current
+    if cart.save
+      redirect_to products_path, notice: "Order placed and email with all informations was sent, thank you!"
+      FinalizeOrderMailer.finalize(cart).deliver_now
+    else
+      flash[:errors] = cart.errors&.full_messages.presence&.join || "Something went wrong, please contact with administrator"
+      render :show, status: :unprocessable_entity
+    end
+  end
 
   # def update
   #   respond_to do |format|
@@ -42,21 +39,11 @@ class CartsController < ApplicationController
   # end
 
   def destroy
-    @cart.destroy
+    cart.destroy
 
     respond_to do |format|
       format.html { redirect_to carts_url, notice: "Cart was successfully destroyed." }
       format.json { head :no_content }
     end
-  end
-
-  private
-
-  # def set_cart
-  #   @cart = Cart.find(params[:id])
-  # end
-
-  def cart_params
-    params.require(:cart).permit(:balance, :completed_at)
   end
 end

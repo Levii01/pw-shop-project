@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
-  resource :carts, only: [:show]
+  resource :carts, only: [:show, :create]
   namespace :carts do
     resources :cart_products, only: [:create]
   end
