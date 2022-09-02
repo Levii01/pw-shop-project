@@ -24,18 +24,18 @@ Wytyczne:
 # Drugi projekt cząstkowy
 
 Prosta symulacja elementów sklepu internetowego Należy napisać prostą symulację sklepu internetowego.
-- [ ] Sklep powinien posiadać prostą listę produktów, które można „wkładać/usuwać” do/z wirtualnego koszyka.
-- [ ] Klient musi mieć możliwość obejrzenia zawartości koszyka oraz sumarycznej i cząstkowej ceny znajdujących się w nim artykułów.
-- [ ] Składanie zamówienia polega na wypełnieniu formularza HTML i przesłania jego zawartości e-mailem do sklepu. 
+- [x] Sklep powinien posiadać prostą listę produktów, które można „wkładać/usuwać” do/z wirtualnego koszyka.
+- [x] Klient musi mieć możliwość obejrzenia zawartości koszyka oraz sumarycznej i cząstkowej ceny znajdujących się w nim artykułów.
+- [x] Składanie zamówienia polega na wypełnieniu formularza HTML i przesłania jego zawartości e-mailem do sklepu. 
 W projekcie należy wykorzystać: 
-- [ ] obsługę sesji; 
-- [ ] obsługę bazy danych — pobieranie informacji o nazwie, opisie, cenie produktów. Opis projektu może z początku budzić obawy o jego skomplikowanie. Proszę się jednak nie martwić. Da się go wykonać na podstawie podręcznika. 
+- [x] obsługę sesji; 
+- [x] obsługę bazy danych — pobieranie informacji o nazwie, opisie, cenie produktów. Opis projektu może z początku budzić obawy o jego skomplikowanie. Proszę się jednak nie martwić. Da się go wykonać na podstawie podręcznika. 
 
 # Projekt końcowy
 
 Ocena końcowa z przedmiotu jest oceną za projekt końcowy (zaliczeniowy). Na zaliczenie należy wykonać projekt serwisu internetowego. Tematyka jest dowolna (np.: internetowy katalog części, internetowa księgarnia, rejestracja pacjentów w przychodni, itp.). Wymagania dotyczące serwisu: 
-- [ ] serwis musi być dostępny poprzez przeglądarkę internetową; 
-- [ ] końcową warstwę prezentacji muszą stanowić poprawne składniowo i semantycznie dokumenty HTML; 
-- [ ] baza danych musi składać się z co najmniej trzech tabel, pomiędzy którymi istnieją relacje; 
-- [ ] serwis musi umożliwiać wprowadzanie danych do bazy, modyfikację i usuwanie danych poprzez przeglądarkę internetową (interfejs HTML); 
-- [ ] musi istnieć część administracyjna serwisu (np. przeznaczona do uzupełniania danych w bazie) zabezpieczona przed nieautoryzowanym dostępem. 
+- [x] serwis musi być dostępny poprzez przeglądarkę internetową; 
+- [x] końcową warstwę prezentacji muszą stanowić poprawne składniowo i semantycznie dokumenty HTML; 
+- [x] baza danych musi składać się z co najmniej trzech tabel, pomiędzy którymi istnieją relacje; 
+- [x] serwis musi umożliwiać wprowadzanie danych do bazy, modyfikację i usuwanie danych poprzez przeglądarkę internetową (interfejs HTML); 
+- [x] musi istnieć część administracyjna serwisu (np. przeznaczona do uzupełniania danych w bazie) zabezpieczona przed nieautoryzowanym dostępem. 
