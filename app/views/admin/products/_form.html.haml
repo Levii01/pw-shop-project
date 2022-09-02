@@ -5,9 +5,12 @@
 
   .form-inputs
     = f.input :name
+    = f.input :model
+    = f.input :brand
+    = f.input :photo_url
     = f.input :description
     = f.input :price
     = f.input :active
 
-  .form-actions
-    = f.button :submit
+  .form-actions.mt-3.mb-3
+    = f.button :submit, class: "btn btn-success"

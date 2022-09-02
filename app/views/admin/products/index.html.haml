@@ -1,7 +1,7 @@
 .card.mt-4.p-3
   .card-body
     %h2 Listing products
-    %table
+    %table.table.table-striped
       %thead
         %tr
           %th Name
@@ -10,8 +10,6 @@
           %th Description
           %th Price
           %th Active
-          %th
-          %th
           %th
 
       %tbody
@@ -23,10 +21,11 @@
             %td= product.description
             %td= product.price
             %td= product.active
-            %td= link_to 'Show', product
-            %td= link_to 'Edit', edit_product_path(product)
-            %td= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }
+            %td
+              = link_to 'Show', admin_product_path(product)
+              = link_to 'Edit', edit_admin_product_path(product)
+              = link_to 'Destroy', admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }
 
     %br
 
-    = link_to 'New Product', new_product_path
+    = link_to 'New Product', new_admin_product_path
