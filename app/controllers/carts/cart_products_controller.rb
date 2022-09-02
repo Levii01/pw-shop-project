@@ -11,6 +11,12 @@ module Carts
       end
     end
 
+    def destroy
+      cart.cart_products.find(params[:id]).destroy
+
+      redirect_to carts_path, notice: "Deleted product from cart"
+    end
+
     private
 
     def cart_product

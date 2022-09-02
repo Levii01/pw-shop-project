@@ -23,6 +23,8 @@
           %th{:scope => "col"} Amount
           %th{:scope => "col"} Price
           %th{:scope => "col"} Sum Price
+          %th{:scope => "col"}
+          
       %tbody
         - @cart.cart_products.each_with_index do |cart_product, i|
           %tr
@@ -32,6 +34,7 @@
             %td= cart_product.amount
             %td= cart_product.product.price
             %td= cart_product.sum_price
+            %td= link_to "Delete", carts_cart_product_path(cart_product), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"
   
   .card-body
     = simple_form_for(@cart, url: carts_path,html: { method: :post }) do |f|
